@@ -26,7 +26,7 @@ public class Frequency {
 
         int start=findFirstGreatest(arr, arr[ind]-1);
         int end=findFirstGreatest(arr, arr[ind]);
-        System.out.println("The frequency of"+arr[ind]+" is " + (end-start));
+        System.out.println("The frequency of "+arr[ind]+" is " + (end-start));
         findFreq(arr, end);
     }
 

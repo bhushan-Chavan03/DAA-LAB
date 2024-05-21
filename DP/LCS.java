@@ -3,7 +3,7 @@
 
 import java.util.*;
 
-class 1LCS {
+class LCS {
     ///////////////////Memoization///////////////////////
     static int lcsUtil(String s1, String s2, int ind1, int ind2, int[][] dp) {
         if (ind1 < 0 || ind2 < 0)
