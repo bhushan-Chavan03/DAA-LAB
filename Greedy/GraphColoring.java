@@ -39,14 +39,12 @@ public class GraphColoring {
                     break;
                 }
             }
-
             result[u] = cr; 
 
            
             Arrays.fill(available, true);
         }
 
-      
         for (int u = 0; u < V; u++) {
             System.out.println("Vertex " + u + " --->  Color " + result[u]);
         }
