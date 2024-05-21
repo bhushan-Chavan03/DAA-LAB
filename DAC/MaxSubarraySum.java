@@ -6,7 +6,7 @@ public class MaxSubarraySum {
     static int maxCrossingSum(int arr[], int l, int m, int h){
         int sum=0;
         int left_sum=Integer.MIN_VALUE;
-        for(int i=0;i>=l;i--){
+        for(int i=m;i>=l;i--){
             sum+=arr[i];
             if(sum>left_sum){
                 left_sum=sum;

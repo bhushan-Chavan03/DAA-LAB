@@ -4,37 +4,28 @@ class SubsetSum {
 
     static boolean subsetSum(int ind, int target, int[] arr, int[][] dp, List<Integer> curr, List<List<Integer>> ans) {
 
-        if (target == 0) {
-            ans.add(new ArrayList<>(curr));
-            return true;
-        }
-
-        if (ind == 0) {
-            if (arr[0] == target) {
-                curr.add(arr[0]);
-                ans.add(new ArrayList<>(curr));
-                curr.remove(curr.size() - 1); 
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        
-        if (dp[ind][target] != -1) return dp[ind][target] == 1;
-
        
+        if (ind < 0) {
+            if (target == 0) {
+                ans.add(new ArrayList<>(curr));
+                return true;
+            }
+            else return false;
+
+        }
+
+        if (dp[ind][target] != -1)
+            return dp[ind][target] == 1;
+
         boolean notTaken = subsetSum(ind - 1, target, arr, dp, curr, ans);
 
-        
         boolean taken = false;
         if (arr[ind] <= target) {
             curr.add(arr[ind]);
             taken = subsetSum(ind - 1, target - arr[ind], arr, dp, curr, ans);
-            curr.remove(curr.size() - 1); 
+            curr.remove(curr.size() - 1);
         }
 
-        
         dp[ind][target] = (notTaken || taken) ? 1 : 0;
         return notTaken || taken;
     }
@@ -47,17 +38,15 @@ class SubsetSum {
         List<Integer> curr = new ArrayList<>();
         int dp[][] = new int[n][k + 1];
 
-       
-        for (int[] row : dp) Arrays.fill(row, -1);
+        for (int[] row : dp)
+            Arrays.fill(row, -1);
 
-        
         if (subsetSum(n - 1, k, arr, dp, curr, ans)) {
             System.out.println("Subset with the given target found");
         } else {
             System.out.println("Subset with the given target not found");
         }
 
-        
         for (List<Integer> subset : ans) {
             for (int num : subset) {
                 System.out.print(num + " ");

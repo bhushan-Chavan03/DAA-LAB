@@ -16,12 +16,12 @@ public class NonAdjacentSum {
     
 
     public static void main(String args[]) {
-        int arr[] = {2, 1, 4, 9};
+        int arr[] = { 1, 2, 9, 4, 5, 0, 4, 11, 6 };
         int n = arr.length;
         int dp[] = new int[n];
         Arrays.fill(dp, -1);
-        // int result = solveUtil(n - 1, arr, dp);
-        int result=0;
+        int result = solveUtil(n - 1, arr, dp);
+        
         dp[0]=arr[0];
         for(int i=1;i<n;i++){
             int pick=Integer.MIN_VALUE;

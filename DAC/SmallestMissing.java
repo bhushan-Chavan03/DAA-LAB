@@ -7,8 +7,9 @@ public class SmallestMissing{
         while(low<=high){
             int mid=(low+high)/2;
             if(nums[mid]!=mid){
-                high=mid-1;
                 ans=mid;
+                high=mid-1;
+                
             }
             else{
                 low=mid+1;

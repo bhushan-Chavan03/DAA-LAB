@@ -32,7 +32,6 @@ class DifferenceK {
 		int arr[] = {1, 3, 5, 8, 6, 4, 6}; 
 		int n = arr.length; 
 		int k = 2; 
-		System.out.println("Count of pairs with given diff is " + 
-							countPairsWithDiffK(arr, n, k)); 
+		System.out.println("Count of pairs with given diff is " + countPairsWithDiffK(arr, n, k)); 
 		}
 }
